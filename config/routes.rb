@@ -2,6 +2,10 @@ HaX0rNews::Application.routes.draw do
   devise_for :users
 
   root :to => 'news#index'
+
+  match 'news' => 'news#index'
+  match 'news/page/:id/' => 'news#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
