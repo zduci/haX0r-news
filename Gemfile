@@ -17,3 +17,5 @@ group :test, :development do
 end
 
 gem 'devise'
+
+gem 'pg'
