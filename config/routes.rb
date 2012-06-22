@@ -1,4 +1,5 @@
 HaX0rNews::Application.routes.draw do
+  root :to => 'news#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
