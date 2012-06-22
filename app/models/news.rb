@@ -2,7 +2,7 @@ class News < ActiveRecord::Base
   DEFAULT_ARTICLES_ON_PAGE = 20
 
   def self.page_exists(page, articles_on_page = DEFAULT_ARTICLES_ON_PAGE)
-    News.count > create_offset(page, articles_on_page)
+    News.count >= create_offset(page, articles_on_page)
   end
 
   def self.create_article(author, title, content)
@@ -16,6 +16,7 @@ class News < ActiveRecord::Base
 
   private
   def self.create_offset(page, articles_on_page)
+    page = '1' if page.nil?
     (page.to_i - 1) * articles_on_page
   end
 end
