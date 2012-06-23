@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :news_articles, :class_name => 'News'
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable

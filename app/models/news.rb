@@ -1,4 +1,6 @@
 class News < ActiveRecord::Base
+  belongs_to :author, :class_name => 'User'
+
   DEFAULT_ARTICLES_ON_PAGE = 20
 
   def self.page_exists(page, articles_on_page = DEFAULT_ARTICLES_ON_PAGE)
